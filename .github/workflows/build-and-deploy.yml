@@ -32,7 +32,7 @@ env:
   ARCHITECTURE: "${{ github.event.inputs.architecture }}"
   GPG_OPTIONS: "--batch --yes --no-tty --list-options no-show-photos --verify-options no-show-photos --pinentry-mode loopback"
   ACTOR: "${{ github.event.inputs.actor || github.triggering_actor }}"
-  CREATE_CHECK_RUN: true
+  CREATE_CHECK_RUN: false
 
 jobs:
   build:
