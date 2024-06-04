@@ -210,7 +210,7 @@ jobs:
           d=/usr/src/build-extra &&
           if test ! -d $d/.git
           then
-            git clone --single-branch -b main https://github.com/HarryGwinnell/build-extra $d
+            git clone --single-branch -b main https://github.com/git-for-windows/build-extra $d
           else
             git -C $d fetch https://github.com/git-for-windows/build-extra main &&
             git -C $d switch -C main FETCH_HEAD
