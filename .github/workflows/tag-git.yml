@@ -100,6 +100,7 @@ jobs:
           title: "Tag Git ${{ steps.generate.outputs.tag-name }} @${{ env.REV }}"
           summary: "Tag Git ${{ steps.generate.outputs.tag-name }} @${{ env.REV }}"
           append-text: 'Tagged Git ${{ steps.generate.outputs.tag-name }}'
+          owner: ${{ env.OWNER }}
       - name: 'Publish Pipeline Artifact: bundle-artifacts'
         uses: actions/upload-artifact@v4
         with:
@@ -113,3 +114,4 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
           append-text: "${{ job.status == 'success' && 'Done!' || format('Completed: {0}', job.status) }}."
           conclusion: ${{ job.status }}
+          owner: ${{ env.OWNER }}
