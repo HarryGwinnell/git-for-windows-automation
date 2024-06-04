@@ -31,7 +31,7 @@ env:
   USERPROFILE: "${{github.workspace}}\\home"
   ARTIFACTS_TO_BUILD: "${{github.event.inputs.artifacts}}"
   ARCHITECTURE: "${{github.event.inputs.architecture}}"
-  OWNER: git-for-windows
+  OWNER: HarryGwinnell
   REPO: git
   TAG_GIT_WORKFLOW_RUN_ID: "${{github.event.inputs.tag_git_workflow_run_id}}"
   EXISTING_GIT_TAG: "${{github.event.inputs.existing_git_tag}}"
@@ -210,7 +210,7 @@ jobs:
           d=/usr/src/build-extra &&
           if test ! -d $d/.git
           then
-            git clone --single-branch -b main https://github.com/git-for-windows/build-extra $d
+            git clone --single-branch -b main https://github.com/HarryGwinnell/build-extra $d
           else
             git -C $d fetch https://github.com/git-for-windows/build-extra main &&
             git -C $d switch -C main FETCH_HEAD
